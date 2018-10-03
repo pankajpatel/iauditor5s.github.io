@@ -1,19 +1,16 @@
-image: node:latest
+image: alpine:latest
 
-cache:
-  paths:
-    - node_modules/
-    - app/bower_components
-
-deploy_production:
+pages:
   stage: deploy
-  environment: Production
-  only:
-    - master
   script:
-    - npm install -g firebase-tools
-    - npm install -g bower
-    - npm install
-    - bower install --allow-root
-    - firebase use --token $FIREBASE_DEPLOY_KEY production
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+  - echo 'Nothing to do...'
+  - mkdir public
+  - cp *.html public/
+  - cp *.js public/
+  - cp *.css public/
+  - cp *.svg public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
