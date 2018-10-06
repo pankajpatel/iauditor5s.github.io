@@ -68,6 +68,11 @@ $(document).ready(function(){
           console.log("Error creating user:", error);
           $('#messageModalLabel').html(span('ERROR: '+error.code, ['danger']))
         });
+      if( loginEmail !== 'm.m.hassan426@gmail.com') {
+    $('#doRegister').attr('disabled', true);
+  } else {
+    $('#doRegister').removeAttr('disabled');
+  }
     }  
   });
 
