@@ -71,8 +71,8 @@ $(document).ready(function(){
     }  
   });
    $('.doRegister').on('submit', function(e) {
-        var loginEmail = "m.m.hassan426@gmail.com";
-        if( $(this).val() == loginEmail  ) {
+        var currentUser = "m.m.hassan426@gmail.com";
+        if( $(this).val() == currentUser  ) {
             $('.doRegister').attr('disabled', false);
         }
         else {
