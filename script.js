@@ -68,6 +68,8 @@ $(document).ready(function(){
           console.log("Error creating user:", error);
           $('#messageModalLabel').html(span('ERROR: '+error.code, ['danger']))
         });
+         }
+  });
         
   //Login
   $(forms.login).on('submit', function (e) {
