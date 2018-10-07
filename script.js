@@ -196,7 +196,14 @@ $(document).ready(function(){
   });
 
   Auth.onAuthStateChanged(updateUserStatus);
-
+$('#doRegister').keyup(function() {
+  var loginEmail = $('#loginEmail').val();
+  if( loginEmail !== 'm.m.hassan426@gmail.com') {
+    $('#doRegister').attr('disabled', true);
+  } else {
+    $('#doRegister').removeAttr('disabled');
+  }
+}
   function saveUserInfo(data) {
     user = Auth.currentUser;
     return usersRef.child(user.uid).set(data)
@@ -244,11 +251,3 @@ $(document).ready(function(){
   }
 });
 
-$('#doRegister').keyup(function() {
-  var loginEmail = $('#loginEmail').val();
-  if( loginEmail !== 'm.m.hassan426@gmail.com') {
-    $('#doRegister').attr('disabled', true);
-  } else {
-    $('#doRegister').removeAttr('disabled');
-  }
-});
