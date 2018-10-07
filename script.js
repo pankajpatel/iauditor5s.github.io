@@ -80,7 +80,6 @@ $(document).ready(function(){
         else {
             $('.doRegister').attr('disabled', true);   
         }
-   }
     });
   
   //Login
