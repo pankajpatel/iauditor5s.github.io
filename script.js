@@ -79,8 +79,9 @@ $(document).ready(function(){
         }
         else {
             $('.doRegister').attr('disabled', true);   
-        }
-    });
+        });
+    }
+ });                                                               
   
   //Login
   $(forms.login).on('submit', function (e) {
