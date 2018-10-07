@@ -18,7 +18,6 @@ $(document).ready(function(){
     messagingSenderId: "797009935459"
   };
   firebase.initializeApp(config);
-
  //create firebase references
   var Auth = firebase.auth();
   var Storage = firebase.storage();
@@ -224,17 +223,6 @@ $(document).ready(function(){
         if(_providers.split(new RegExp(el.getAttribute('data-provider'), 'ig')).length > 1) {
           el.setAttribute('disabled', true);
         }
-      });
- $(function() {
-    $('#doRegister').on('keyup',function() {
-        var Auth.currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == Auth.currentUser ) {
-            $('#doRegister').attr('disabled', false);
-        }
-        else {
-            $('#doRegister').attr('disabled', true);
-      
-          }
       });
       usersRef.child(user.uid).once('value').then(function (snapshot) {
         var info = snapshot.val();
