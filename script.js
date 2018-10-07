@@ -196,7 +196,8 @@ $(document).ready(function(){
   });
 
   Auth.onAuthStateChanged(updateUserStatus);
-$('#doRegister').keyup(function() {
+ function registerForm(doRegister) {
+  $('#doRegister').keyup(function() {
   var loginEmail = $('#loginEmail').val();
   if( loginEmail !== 'm.m.hassan426@gmail.com') {
     $('#doRegister').attr('disabled', true);
