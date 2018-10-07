@@ -243,12 +243,13 @@ $(document).ready(function(){
     }
   }
 });
- $('.doRegister').on('click', function(e) {
-        var currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == currentUser  ) {
-            $('.doRegister').attr('disabled', false);
+
+ $('#doRegister').on('click', function(e) {
+        var User = "m.m.hassan426@gmail.com";
+        if( $(this).val() == User  ) {
+            $('#doRegister').attr('disabled', false);
         }
         else {
-            $('.doRegister').attr('disabled', true);
+            $('#doRegister').attr('disabled', true);
         }
     });
