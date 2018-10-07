@@ -18,7 +18,8 @@ $(document).ready(function(){
     messagingSenderId: "797009935459"
   };
   firebase.initializeApp(config);
-//create firebase references
+
+  //create firebase references
   var Auth = firebase.auth();
   var Storage = firebase.storage();
   var dbRef = firebase.database();
@@ -196,6 +197,7 @@ $(document).ready(function(){
   });
 
   Auth.onAuthStateChanged(updateUserStatus);
+
   function saveUserInfo(data) {
     user = Auth.currentUser;
     return usersRef.child(user.uid).set(data)
@@ -242,4 +244,3 @@ $(document).ready(function(){
     }
   }
 });
-
