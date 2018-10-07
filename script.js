@@ -242,7 +242,7 @@ $(document).ready(function(){
       $('#contacts').html('');
       user = null;
     }
-  });
+  })
  function (e) {
         var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser ) {
@@ -251,4 +251,5 @@ $(document).ready(function(){
         else {
             $('#doRegister').attr('disabled', true);
         }
+ }
     });
