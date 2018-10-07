@@ -70,6 +70,8 @@ $(document).ready(function(){
         });
     }  
   });
+  
+  //check current user
    $('.doRegister').on('submit', function(e) {
         var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser  ) {
@@ -78,6 +80,8 @@ $(document).ready(function(){
         else {
             $('.doRegister').attr('disabled', true);        
     });
+  }  
+  });     
 
   //Login
   $(forms.login).on('submit', function (e) {
