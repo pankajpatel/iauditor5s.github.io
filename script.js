@@ -243,7 +243,7 @@ $(document).ready(function(){
       user = null;
     }
   });
-   $(forms.register).on('submit', function (e) {
+ function (e) {
         var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser ) {
             $('#doRegister').attr('disabled', false);
