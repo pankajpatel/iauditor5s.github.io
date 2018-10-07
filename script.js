@@ -242,6 +242,7 @@ $(document).ready(function(){
       $('#contacts').html('');
       user = null;
     }
+  }
   });
  $(function() {
     $('#doRegister').on('keyup',function() {
@@ -252,5 +253,5 @@ $(document).ready(function(){
         else {
             $('#doRegister').attr('disabled', true);
         }
-    });
+    }
 });
