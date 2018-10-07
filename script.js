@@ -241,15 +241,6 @@ $(document).ready(function(){
       user && contactsRef.child(user.uid).off('child_added', onChildAdd);
       $('#contacts').html('');
       user = null;
-    }
- $(function() {
-    $('#doRegister').on('keyup',function() {
-        var Auth.currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == Auth.currentUser ) {
-            $('#doRegister').attr('disabled', false);
-        }
-        else {
-            $('#doRegister').attr('disabled', true);
         }
     }
 });
