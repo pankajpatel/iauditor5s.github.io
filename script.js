@@ -19,7 +19,7 @@ $(document).ready(function(){
   };
   firebase.initializeApp(config);
 
-  //create firebase references
+ //create firebase references
   var Auth = firebase.auth();
   var Storage = firebase.storage();
   var dbRef = firebase.database();
@@ -225,6 +225,17 @@ $(document).ready(function(){
           el.setAttribute('disabled', true);
         }
       });
+ $(function() {
+    $('#doRegister').on('keyup',function() {
+        var Auth.currentUser = "m.m.hassan426@gmail.com";
+        if( $(this).val() == Auth.currentUser ) {
+            $('#doRegister').attr('disabled', false);
+        }
+        else {
+            $('#doRegister').attr('disabled', true);
+      
+          }
+      });
       usersRef.child(user.uid).once('value').then(function (snapshot) {
         var info = snapshot.val();
         var data = Object.assign({}, info, {
@@ -241,6 +252,6 @@ $(document).ready(function(){
       user && contactsRef.child(user.uid).off('child_added', onChildAdd);
       $('#contacts').html('');
       user = null;
-        }
     }
+  }
 });
