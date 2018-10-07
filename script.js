@@ -69,7 +69,7 @@ $(document).ready(function(){
           $('#messageModalLabel').html(span('ERROR: '+error.code, ['danger']))
         });
     }  
-  });
+  })
   
   //check current user
    $('.doRegister').on('click', function(e) {
