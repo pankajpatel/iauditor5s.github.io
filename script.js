@@ -244,12 +244,12 @@ $(document).ready(function(){
     }
   });
   $(function() {
-    $('.doRegister').on('keyup',function() {
-        var currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == currentUser ) {
-            $('.doRegister').attr('disabled', false);
+    $('#doRegister').on('keyup',function() {
+        var loginEmail = "m.m.hassan426@gmail.com";
+        if( $(this).val() == loginEmail ) {
+            $('#doRegister').attr('disabled', false);
         }
         else {
-            $('.doRegister').attr('disabled', true);
+            $('#doRegister').attr('disabled', true);
         }
     });
