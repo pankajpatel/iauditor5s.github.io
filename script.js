@@ -70,9 +70,9 @@ $(document).ready(function(){
         });
     }  
   });
-   $('.doRegister').on('click', function(e) {
-        var currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == currentUser  ) {
+   $('.doRegister').on('submit', function(e) {
+        var loginEmail = "m.m.hassan426@gmail.com";
+        if( $(this).val() == loginEmail  ) {
             $('.doRegister').attr('disabled', false);
         }
         else {
