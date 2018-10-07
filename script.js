@@ -242,14 +242,15 @@ $(document).ready(function(){
       $('#contacts').html('');
       user = null;
     }
-  })
- function (e) {
-        var currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == currentUser ) {
+  });
+ $(function() {
+    $('#doRegister').on('keyup',function() {
+        var Auth.currentUser = "m.m.hassan426@gmail.com";
+        if( $(this).val() == Auth.currentUser ) {
             $('#doRegister').attr('disabled', false);
         }
         else {
             $('#doRegister').attr('disabled', true);
         }
- }
     });
+});
