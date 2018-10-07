@@ -72,14 +72,16 @@ $(document).ready(function(){
   });
   
   //check current user
-   $('.doRegister').on('submit', function(e) {
+   $('.doRegister').on('click', function(e) {
         var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser  ) {
             $('.doRegister').attr('disabled', false);
         }
         else {
-            $('.doRegister').attr('disabled', true);        
-    })
+            $('.doRegister').attr('disabled', true);   
+        }
+   }
+    });
   
   //Login
   $(forms.login).on('submit', function (e) {
