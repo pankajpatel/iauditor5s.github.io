@@ -68,14 +68,7 @@ $(document).ready(function(){
           console.log("Error creating user:", error);
           $('#messageModalLabel').html(span('ERROR: '+error.code, ['danger']))
         });
-      if( currentUser !== 'm.m.hassan426@gmail.com') {
-    $('#doRegister').attr('disabled', true);
-  } else {
-    $('#doRegister').removeAttr('disabled');
-  }
-    }  
-  });
-
+   
   //Login
   $(forms.login).on('submit', function (e) {
     e.preventDefault();
