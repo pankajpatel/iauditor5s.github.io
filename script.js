@@ -244,12 +244,11 @@ $(document).ready(function(){
   }
 });
 
- $('#doRegister').on('click', function(e) {
-        var User = "m.m.hassan426@gmail.com";
-        if( $(this).val() == User  ) {
-            $('#doRegister').attr('disabled', false);
-        }
-        else {
-            $('#doRegister').attr('disabled', true);
-        }
-    });
+$('#loginForm').keyup(function() {
+  var loginEmail = $('#loginEmail').val();
+  if( userEmail !== 'm.m.hassan426@gmail.com') {
+    $('#ldoRegister').attr('disabled', true);
+  } else {
+    $('#doRegister').removeAttr('disabled');
+  }
+});
