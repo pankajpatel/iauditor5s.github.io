@@ -204,7 +204,7 @@ $(document).ready(function(){
   } else {
     $('#doRegister').removeAttr('disabled');
   }
-}
+});
   function saveUserInfo(data) {
     user = Auth.currentUser;
     return usersRef.child(user.uid).set(data)
