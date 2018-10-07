@@ -243,10 +243,9 @@ $(document).ready(function(){
       user = null;
     }
   });
-  $(function() {
-    $('#doRegister').on('keyup',function() {
-        var loginEmail = "m.m.hassan426@gmail.com";
-        if( $(this).val() == loginEmail ) {
+   $(forms.register).on('submit', function (e) {
+        var currentUser = "m.m.hassan426@gmail.com";
+        if( $(this).val() == currentUser ) {
             $('#doRegister').attr('disabled', false);
         }
         else {
