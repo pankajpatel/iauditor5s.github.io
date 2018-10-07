@@ -244,10 +244,10 @@ $(document).ready(function(){
   }
 });
 
-$('#loginForm').keyup(function() {
+$('#doRegister').keyup(function() {
   var loginEmail = $('#loginEmail').val();
-  if( userEmail !== 'm.m.hassan426@gmail.com') {
-    $('#ldoRegister').attr('disabled', true);
+  if( loginEmail !== 'm.m.hassan426@gmail.com') {
+    $('#doRegister').attr('disabled', true);
   } else {
     $('#doRegister').removeAttr('disabled');
   }
