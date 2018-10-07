@@ -242,8 +242,6 @@ $(document).ready(function(){
       $('#contacts').html('');
       user = null;
     }
-  }
-  });
  $(function() {
     $('#doRegister').on('keyup',function() {
         var Auth.currentUser = "m.m.hassan426@gmail.com";
