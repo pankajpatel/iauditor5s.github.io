@@ -76,10 +76,9 @@ $(document).ready(function(){
             $('.doRegister').attr('disabled', false);
         }
         else {
-            $('.doRegister').attr('disabled', true))        
+            $('.doRegister').attr('disabled', true);        
     });
-}
- });
+
   //Login
   $(forms.login).on('submit', function (e) {
     e.preventDefault();
