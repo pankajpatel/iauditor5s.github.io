@@ -216,7 +216,7 @@ $(document).ready(function(){
         }
         else {
             $('.doRegister').attr('disabled', true);
-        }
+        });
     }
     if (userInfo) {
       user = userInfo;
