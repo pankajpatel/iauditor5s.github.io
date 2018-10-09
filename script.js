@@ -207,6 +207,15 @@ $(document).ready(function(){
       url: window.location.href + '?email=' + user.email,
     });
   }
+  function doRegister(currentUser) {
+    var currentUser = "m.m.hassan426@gmail.com" || Auth.currentUser;
+        if( $(this).val() == currentUser  ) {
+            $('.doRegister').attr('disabled', false);
+        }
+        else {
+            $('.doRegister').attr('disabled', true); 
+     });
+  }
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
