@@ -207,17 +207,16 @@ $(document).ready(function(){
       url: window.location.href + '?email=' + user.email,
     });
   }
-  function updateUserStatus(userInfo) {
-    userInfo = 'm.m.hassan426@gmail.com' || Auth.currentUser;
-    if (userInfo) {
-      user = userInfo;
-      $('body').removeClass('auth-false').addClass('auth-true');
-      if(user.doRegister) {
-        document.querySelector('#doRegister').classList.add('d-none')
-      } else {
-        document.querySelector('#doRegister').classList.remove('d-none')
-      }
-     });
+  function checkCurrentUser(currentUser) {
+    currentUser = currentUser || Auth.currentUser;
+     var currentUser = "m.m.hassan426@gmail.com";
+        if( $(this).val() == currentUser  ) {
+            $('.doRegister').attr('disabled', false);
+        }
+        else {
+            $('.doRegister').attr('disabled', true);
+        }
+    });
   }
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
