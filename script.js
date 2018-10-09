@@ -250,7 +250,5 @@ $(document).ready(function(){
       user && contactsRef.child(user.uid).off('child_added', onChildAdd);
       $('#contacts').html('');
       user = null;
-    }
-  }
- }    
+    } 
 });
