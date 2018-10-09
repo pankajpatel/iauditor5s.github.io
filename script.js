@@ -18,6 +18,7 @@ $(document).ready(function(){
     messagingSenderId: "797009935459"
   };
   firebase.initializeApp(config);
+
  //create firebase references
   var Auth = firebase.auth();
   var Storage = firebase.storage();
@@ -207,16 +208,6 @@ $(document).ready(function(){
       url: window.location.href + '?email=' + user.email,
     });
   }
-  function checkCurrentUser(currentUser) {
-    currentUser = currentUser || Auth.currentUser;
-     var currentUser = "m.m.hassan426@gmail.com";
-        if( $(this).val() == currentUser  ) {
-            $('.doRegister').attr('enabled', false);
-        }
-        else {
-            $('.doRegister').attr('disabled', true);
-        }
-    
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
@@ -250,5 +241,6 @@ $(document).ready(function(){
       user && contactsRef.child(user.uid).off('child_added', onChildAdd);
       $('#contacts').html('');
       user = null;
-    } 
+    }
+  }
 });
