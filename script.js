@@ -215,9 +215,8 @@ $(document).ready(function(){
         }
         else {
             $('.doRegister').attr('disabled', true);
-        }
-    }
-  });
+        });
+    
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
