@@ -211,13 +211,13 @@ $(document).ready(function(){
     currentUser = currentUser || Auth.currentUser;
      var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser  ) {
-            $('.doRegister').attr('disabled', false);
+            $('.doRegister').attr('enabled', false);
         }
         else {
             $('.doRegister').attr('disabled', true);
         }
-    });
-  }
+    }
+  });
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
