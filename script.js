@@ -212,10 +212,10 @@ $(document).ready(function(){
     userInfo = userInfo || Auth.currentUser;
     var currentUser = "m.m.hassan426@gmail.com";
         if( $(this).val() == currentUser  ) {
-            $('.doregister').attr('disabled', false);
+            $('.doRegister').attr('disabled', false);
         }
         else {
-            $('.doregister').attr('disabled', true);
+            $('.doRegister').attr('disabled', true);
         }
     if (userInfo) {
       user = userInfo;
