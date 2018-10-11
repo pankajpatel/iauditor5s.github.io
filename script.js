@@ -48,22 +48,22 @@ $(document).ready(function(){
       displayName: data.firstName + ' ' + data.lastName,
       photoURL: null
     };
+    var newUser = null;
     if( data.email != '' && password != ''  && cPassword === password ){
       Auth.createUserWithEmailAndPassword(data.email, password)
-        .then(function() { user = Auth.currentUser })
+        .then(function() { newUser = Auth.currentUser })
         .then(function() { return sendEmailVerification(data) })
-        .then(function() { return photo ? saveImage(photo, user.uid, profileImagesRef) : null })
+        .then(function() { return photo ? saveImage(photo, newUser.uid, profileImagesRef) : null })
         .then(function(url) { profileData.photoURL = url; })
-        .then(function(){ return user.updateProfile(profileData) })
-        .then(function(){ saveUserInfo(data) })
+        .then(function(){ return newUser.updateProfile(profileData) })
+        .then(function(){ saveUserInfo(data, newUser) })
         .then(function(){
-          userData = data;
-          console.log("User Information Saved:", user.uid);
+          console.log("User Information Saved:", newUser.uid);
           $('#messageModalLabel').html(span('Success!', ['center', 'success']))
           
           $('#messageModal').modal('hide');
+          Auth.signOut();
         })
-        .then(updateUserStatus)
         .catch(function(error){
           console.log("Error creating user:", error);
           $('#messageModalLabel').html(span('ERROR: '+error.code, ['danger']))
@@ -198,8 +198,8 @@ $(document).ready(function(){
 
   Auth.onAuthStateChanged(updateUserStatus);
 
-  function saveUserInfo(data) {
-    user = Auth.currentUser;
+  function saveUserInfo(data, user) {
+    if(!user) user = Auth.currentUser;
     return usersRef.child(user.uid).set(data)
   }
   function sendEmailVerification(data) {
@@ -213,9 +213,11 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
+        $('#addUsers').show();
         $('.doRegister').attr('disabled', false);
       }
       else {
+        $('#addUsers').hide();
         $('.doRegister').attr('disabled', true);
       }
       user = userInfo;
