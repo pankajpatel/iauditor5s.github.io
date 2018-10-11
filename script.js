@@ -216,7 +216,7 @@ $(document).ready(function(){
         $('.doRegister').attr('disabled', false);
       }
       else {
-        $('.doregister').attr('disabled', true);
+        $('.doRegister').attr('disabled', true);
       }
       user = userInfo;
       $('body').removeClass('auth-false').addClass('auth-true');
