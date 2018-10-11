@@ -213,7 +213,6 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
-         $('.doRegister').on('keyup', function (e) {
         $('.doRegister').attr('disabled', false);
       }
       else {
