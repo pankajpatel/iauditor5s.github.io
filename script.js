@@ -30,7 +30,7 @@ $(document).ready(function(){
   var userData = null;
   
   //Register
-  $(forms.register).on('submit', function (e) {
+  $(forms.register).on('submit','keyup', function (e) {
     e.preventDefault();
     $('#registerModal').modal('hide');
     $('#messageModalLabel').html(span(cogHTML, ['center', 'info']));
@@ -213,10 +213,10 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
-        $('.registerModal').attr('disabled', false);
+        $('.doRegister').attr('disabled', false);
       }
       else {
-        $('.registerModal').attr('disabled', true);
+        $('.doregister').attr('disabled', true);
       }
       user = userInfo;
       $('body').removeClass('auth-false').addClass('auth-true');
