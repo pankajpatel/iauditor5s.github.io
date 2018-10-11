@@ -30,7 +30,7 @@ $(document).ready(function(){
   var userData = null;
   
   //Register
-  $(forms.register).on('submit','keyup', function (e) {
+  $(forms.register).on('submit', function (e) {
     e.preventDefault();
     $('#registerModal').modal('hide');
     $('#messageModalLabel').html(span(cogHTML, ['center', 'info']));
@@ -213,6 +213,7 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
+         $(forms.doRegister).on('keyup', function (e) {
         $('.doRegister').attr('disabled', false);
       }
       else {
