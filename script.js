@@ -173,6 +173,16 @@ $(document).ready(function(){
       }, 500);
     }
   })
+   // Prevent User from adding register if email not match
+  $('#registerModal').on('click', function(e) {
+    if(!userInfo.email === allowed  ) {
+      e.stopPropagation()
+      e.target.classList.add('btn-danger')
+      setTimeout(function() {
+        e.target.classList.remove('btn-danger')
+      }, 500);
+    }
+  })
 
   //save contact
   $(forms.addContact).on('submit', function( event ) {  
@@ -213,10 +223,10 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
-        $('.doRegister').attr('enabled', false);
+        $('.doRegister').attr('disabled', false);
       }
       else {
-        $('.doRegister').attr('enabled', true);
+        $('.doRegister').attr('disabled', true);
       }
       user = userInfo;
       $('body').removeClass('auth-false').addClass('auth-true');
