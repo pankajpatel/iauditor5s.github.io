@@ -118,7 +118,7 @@ $(document).ready(function(){
     e.preventDefault();
     Auth.signOut();
   });
-  $('.doRegister').on('keyup',function(e) {
+  $('#doRegister').on('keyup',function(e) {
     e.preventDefault();
   });
 
