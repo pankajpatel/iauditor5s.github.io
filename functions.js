@@ -50,11 +50,7 @@ var saveImage = function(file, filename, ref, callbacks) {
 function onChildAdd (snap) {
   $('#contacts').append(contactHtmlFromObject(snap.key, snap.val()));
 }
- //allowed user for register
-$(function() {
-    $('.doRegister').on('keyup',function() {
-    }     
-
+ 
 //prepare contact object's HTML
 function contactHtmlFromObject(key, contact){
   return document.querySelector('#'+key) ? ''
