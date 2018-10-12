@@ -53,6 +53,7 @@ function onChildAdd (snap) {
  //allowed user for register
 $(function() {
     $('.doRegister').on('keyup',function() {
+    }     
 
 //prepare contact object's HTML
 function contactHtmlFromObject(key, contact){
