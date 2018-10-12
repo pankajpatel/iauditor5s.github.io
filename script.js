@@ -118,6 +118,9 @@ $(document).ready(function(){
     e.preventDefault();
     Auth.signOut();
   });
+  $('.doRegister').on('keyup',function(e) {
+    e.preventDefault();
+  });
 
   //Update user info
   $(forms.updateUserInfo).on('submit', function (e) {
