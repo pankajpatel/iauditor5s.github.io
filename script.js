@@ -28,7 +28,12 @@ $(document).ready(function(){
   var usersRef = dbRef.ref('users')
   var user = null;
   var userData = null;
+  var allowed = "m.m.hassan426@gmail.com";
 
+  $('#registerEmail').on('change', function() {
+    $('.doRegister').attr('disabled', $('#registerEmail').val() !== allowed);
+  })
+  
   //Register
   $(forms.register).on('submit', function (e) {
     e.preventDefault();
@@ -221,7 +226,6 @@ $(document).ready(function(){
   function updateUserStatus(userInfo) {
     userInfo = userInfo || Auth.currentUser;
     if (userInfo) {
-      var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
         $('.doRegister').attr('disabled', false);
       }
