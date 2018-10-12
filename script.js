@@ -28,7 +28,7 @@ $(document).ready(function(){
   var usersRef = dbRef.ref('users')
   var user = null;
   var userData = null;
-  
+
   //Register
   $(forms.register).on('submit', function (e) {
     e.preventDefault();
@@ -117,7 +117,8 @@ $(document).ready(function(){
   $('#logout').on('click', function(e) {
     e.preventDefault();
     Auth.signOut();
- 
+  });
+
   //Update user info
   $(forms.updateUserInfo).on('submit', function (e) {
     e.preventDefault();
