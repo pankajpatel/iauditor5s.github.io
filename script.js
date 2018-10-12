@@ -212,10 +212,10 @@ $(document).ready(function(){
     if (userInfo) {
       var allowed = "m.m.hassan426@gmail.com";
       if( userInfo.email === allowed  ) {
-        $('.doRegister').attr('disabled', false);
+        $('.doRegister').attr('enabled', false);
       }
       else {
-        $('.doRegister').attr('disabled', true);
+        $('.doRegister').attr('enabled', true);
       }
       user = userInfo;
       $('body').removeClass('auth-false').addClass('auth-true');
